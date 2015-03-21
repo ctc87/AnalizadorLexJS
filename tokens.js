@@ -2,7 +2,6 @@
 // tokens.js
 // 2015-02-25
 
-
 // Produce an array of simple token objects from a string.
 // A simple token object contains these members:
 //      type: 'name', 'string', 'number', 'operator'
@@ -22,9 +21,9 @@ RegExp.prototype.bExec = function(str) {
 
 String.prototype.tokens = function () {
     var startIndex;             // The index of the start of the token.
-    var currentTokenIndex = 0;      // The index of the current character.
-    var numberValue             // The number Value
-    var matching                // Matching
+    var currentTokenIndex = 0;  // The index of the current character.
+    var numberValue;             // The number Value
+    var matching;                // Matching
     var result = [];            // An array to hold the results.
 
     // the following lines are the regexp of the different tokens of js
@@ -67,39 +66,39 @@ String.prototype.tokens = function () {
         tokens.forEach(function(t) {t.lastIndex = currentTokenIndex;}); //Only ECMAScript5
         startIndex = currentTokenIndex;
         // Ignore whitespaces and comments
-        if((matching = WHITES.bexec(this)) || 
+        if(matching = WHITES.bExec(this) || 
         (matching = ONELINECOMMENT.bExec(this)) || 
         (matching = MULTIPLELINECOMMENT.bExec(this))) {
             getTok();                                               //update the index
         }
         // Var names tokenization
-        else if(matching = ID.bexec(this)) {
+        else if(matching = ID.bExec(this)) {
             result.push(make('name', getTok()));                    //push the result into result array with name and the token string matched
         }
         // Constant number objects tokenization
-        else if(macthing = NUM.bexec(this)) {
+        else if(matching = NUM.bExec(this)) {
             numberValue = +getTok();
             
             if(isFinite(numberValue)) {
                 result.push(make('number', numberValue));           // If is finite we proced like var name.
             } else {
-                make('number', macthing[0]).error("Bad number");    // Else ???? see in execution to describe it
+                make('number', matching[0]).error("Bad number");    // Else ???? see in execution to describe it
             }
         }
         // Constant string objects tokenization
-        else if(matching = STRING.bexec(this)) {                    // Push the result into result array, and put off the quotes in result type field 
+        else if(matching = STRING.bExec(this)) {                    // Push the result into result array, and put off the quotes in result type field 
             result.push(make('string', getTok().replace(/^["']|["']$/g,''))); 
         }
         // Two char operators tokenization
-        else if(matching = TWOCHAROPERATORS.bexec(this)) {
+        else if(matching = TWOCHAROPERATORS.bExec(this)) {
             result.push(make('operator', getTok()));
         }
         // One char operators tokenization
-        else if(matching = ONECHAROPERATORS.bexec(this)) {
+        else if(matching = ONECHAROPERATORS.bExec(this)) {
             result.push(make('operator', getTok()));
         }
-        else {
-            throw "Syntax error near '" + this.substr(currentTokenIndex) + "'";
+        else {                                                      // Throw error and say the last position in the string
+            throw "Syntax error near '" + this.substr(currentTokenIndex) + "'"; 
         }
     }
     return result;
