@@ -6,57 +6,158 @@ html *
         padding-right: 10px; vertical-align: top;}
     table {width: 90%; border: 0px; cellpadding: 0px;}
 }
+
+
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: white;
+  color: white;
+
+	background: url('./img/bg_desktop.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#terminal {
+  width: 750px;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+  background-image: url('./img/bg_trans.png');
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  float: left;
+}
+#handle {
+  width: 750px;
+  height: 30px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: rgb(104,103,101);
+  background: -moz-linear-gradient(top,  rgba(104,103,101,1) 0%, rgba(60,59,55,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(104,103,101,1)), color-stop(100%,rgba(60,59,55,1)));
+  background: -webkit-linear-gradient(top,  rgba(104,103,101,1) 0%,rgba(60,59,55,1) 100%);
+  background: -o-linear-gradient(top,  rgba(104,103,101,1) 0%,rgba(60,59,55,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(104,103,101,1) 0%,rgba(60,59,55,1) 100%);
+  background: linear-gradient(to bottom,  rgba(104,103,101,1) 0%,rgba(60,59,55,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#686765', endColorstr='#3c3b37',GradientType=0 );
+
+}
+#handle p {
+  line-height: 30px;
+  color: #DFDBD2;
+  padding-left: 15px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+p, span {
+  margin-top: 1px;
+}
+
+#enlaces {
+    float: right;
+    margin-top:100px;
+}
+
+
+#drop_zone {
+  position:relative;
+  margin-right:50px;
+  margin-top:50px;
+  width:80%;
+  height:40%;
+  float: left;
+  border: 2px dashed white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  font: 20pt bold 'Vollkorn';
+  color: white;
+  transition:All 1s ease;
+-webkit-transition:All 1s ease;
+-moz-transition:All 1s ease;
+-o-transition:All 1s ease;
+}
 #INPUT 
 {
     border: none; 
-    color: black;
-    font-family: monospace;
-    height: 1in;
+    color: white;
     overflow: auto;
     /* padding: 0.5em; */
-    width: 80%;
-    background-color: #66FFCC; 
+    width: 99%;
+    height: 91%;
+    resize: none;
+    background-color:transparent;
 }
-body { background-color: #99FFFF; }
+
+#list
+{
+    font-size:11px;
+}
+
+#header 
+{
+    color: white;
+    width:90%;
+    font-size: 37px;
+    margin: 0 auto;
+}
+
+.titles
+{
+    color:white;
+    font-size:30px;
+    float:left;
+    margin-left:100px;
+    margin-top:20px;
+}
+
 #OUTPUT 
 {
-    background-color: #66FFCC; 
-    width: 80%;
+    float:left;
+    background-color: transparent;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left:40px;
+    width:80%;
 }
 
-
-a {
-  font-size: x-large;
-  text-decoration:none;
+#navi-left 
+{
+    float:right;
+    width:35%;
 }
 
-a:link { color:#00FFFF; }
-a:visited { color:black; }
-a:hover{ 
-  background-color:black; 
-  color: #FFF;
+#PARSE {
+    border:none;
+    position:relative;
+    bottom:60px;
+    right:30px;
+    background-color:transparent;
+    width:auto;
 }
-a:active {color:#0000FF;}  /* selected link */
-
-
-
-nav {
-    text-align: center;
+#iconParser 
+{
+    width:80px;
+    height:80px;
 }
-
-nav li {
-    list-style: none;
-    display: inline;
-    margin: 0 1em;
+.icon {
+    width:100px;
+    height:100px;
 }
 
-.mylink {
-  background-color: #66FFCC;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border: 5px solid #009900;
-  padding: 5px;
+#PARSE:hover {
+    position:relative;
+    right:25px;
+    bottom:55px;
 }
-
-/* Supress borders after the button is pressed */
-#PARSE:focus {outline:0; }
