@@ -101,7 +101,7 @@ function main() {
 
 window.onload = function() {
     VariosFuileSup();
-      // Setup the dnd listeners.
+    // Setup the dnd listeners.
     var dropZone = document.getElementById('drop_zone');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelect, false);
