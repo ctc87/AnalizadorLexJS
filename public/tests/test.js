@@ -22,4 +22,23 @@ suite('Analizador Lexico de un subconjunto', function() {
     assert.deepEqual(OUTPUT.innerHTML, '{\n    "value": "=",\n    "arity": "binary",\n    "first": {\n        "value": "b",\n        "arity": "name"\n    },\n    "second": {\n        "value": "function",\n        "arity": "function",\n        "first": [\n            {\n                "value": "x",\n                "arity": "name"\n            }\n        ],\n        "second": {\n            "value": "return",\n            "arity": "statement",\n            "first": {\n                "value": 1,\n                "arity": "literal"\n            }\n        }\n    }\n}');
   });
   
+    test('Drag&Drop', function() {
+  	var test = [];
+  	var test = {
+  	  files: test
+  	}
+  	var style_ = {
+  		background: ""
+  	}
+  	var target_ = {
+  		style: style_
+  	}
+  	var fakeEvent = {
+  		stopPropagation: function(){},
+  		preventDefault: function(){},
+  		dataTransfer: test,
+  		target: target_
+  	}
+    handleFileSelect(fakeEvent);
+  });
 });
