@@ -1,5 +1,14 @@
 var assert = chai.assert;
 
+module( "draggable: events", {
+	setup: function() {
+		element = $("<div>").appendTo("#qunit-fixture");
+	},
+	teardown: function() {
+		element.draggable("destroy");
+	}
+});
+	
 suite('Analizador Lexico de un subconjunto', function() {
 
   setup(function(){
@@ -41,4 +50,34 @@ suite('Analizador Lexico de un subconjunto', function() {
   	}
     handleFileSelect(fakeEvent);
   });
+  
+  test( "callbacks occurrence count", function() {
+	expect( 3 );
+
+	var start = 0,
+		stop = 0,
+		dragc = 0;
+
+	element.draggable({
+		start: function() {
+			start++;
+		},
+		drag: function() {
+			dragc++;
+		},
+		stop: function() {
+			stop++;
+		}
+	});
+
+	element.simulate( "drag", {
+		dx: 10,
+		dy: 10
+	});
+
+	equal( start, 1, "start callback should happen exactly once" );
+	equal( dragc, 3, "drag callback should happen exactly once per mousemove" );
+	equal( stop, 1, "stop callback should happen exactly once" );
+});
+
 });
