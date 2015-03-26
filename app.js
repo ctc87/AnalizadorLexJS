@@ -16,6 +16,8 @@ app.get('/', function (request, response) {
     response.render('index', { title: 'Pr&aacute;ctica: Analizador L&eacute;xico para Un Subconjunto de JavaScript' });
 });
 
+
+
 app.get('/pr', function (req, res) {
 		var input = req.query.input;
 		
