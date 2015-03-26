@@ -1,0 +1,24 @@
+  <h1 id="header"><%- title %></h1>
+  <div id="terminal">
+  <div id="handle"><p>Fill the input box with javascript code: </p></div>
+      <textarea id="INPUT" class="terminal">
+     var a = "hello"; // initialize a
+     var b = function(x) {
+             var c = 3;
+               return x+c;
+             };
+      </textarea>
+            <button id="PARSE" title="Parse input" ><img src="img/icono-parser.png" id="iconParser"></button>
+
+    </div>
+<div id='navi-left'>
+  <div id="drop_zone">Drop files here</div>
+  <div class='titles' id='tit'>Archivos Cargados<br/>
+  <output id="list"></output></div>
+  <div class='titles'>Enlaces<br/>
+          <a href="http://javascript.crockford.com/tdop/tdop.html" title='Tutorial de precedencia de operadores JavaScript'><img src="img/javascript_logo.png" class='icon'></a>
+          <a href="https://github.com/ctc87/AnalizadorLexJS" title='Repositorio en github'><img src='img/github.png' class='icon'></a>
+      </div>
+</div>
+ <pre id='OUTPUT'></pre>
+
