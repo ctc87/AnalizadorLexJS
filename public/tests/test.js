@@ -1,13 +1,6 @@
 var assert = chai.assert;
 
-module( "draggable: events", {
-	setup: function() {
-		element = $("<div>").appendTo("#qunit-fixture");
-	},
-	teardown: function() {
-		element.draggable("destroy");
-	}
-});
+
 	
 suite('Analizador Lexico de un subconjunto', function() {
 
