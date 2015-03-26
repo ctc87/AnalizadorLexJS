@@ -7,8 +7,8 @@ suite('Analizador Lexico de un subconjunto', function() {
   setup(function(){
     if (typeof __html__ !== 'undefined') {
       document.body.innerHTML = __html__['tests/index.html'];
-      input = document.getElementById('INPUT');
-      ouput = document.getElementById('OUTPUT');
+      INPUT = document.getElementById('INPUT');
+      OUTPUT = document.getElementById('OUTPUT');
     }
   });
   
