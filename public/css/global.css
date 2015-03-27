@@ -20,6 +20,12 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+#botones{
+	float:right;
+	
+}
+
 #terminal {
   width: 750px;
   height: 400px;
