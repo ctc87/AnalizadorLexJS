@@ -113,4 +113,16 @@ $(document).ready(function () {
 		  document.getElementById('OUTPUT').innerHTML = data["answer"].replace(/&/g, '&amp;').replace(/[<]/g, '&lt;');
           }, 'json');
 	});
+	
+	  /*BUTTONS*/
+
+      $("#e1").click(function(){
+         $("#INPUT").val("var a = 3;");
+      });
+      $("#e2").click(function(){
+         $("#INPUT").val("var b = function(x) { \n\tvar c = 3; \n\treturn x+c; \n};");
+      });
+     $("#e3").click(function(){
+       $("#INPUT").val("var a = 3;\nvar b = function(x) { \n\tvar c = 3; \n\treturn x+c; \n};");
+      });
 });
