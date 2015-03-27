@@ -8,7 +8,7 @@ var minifyCSS  = require('gulp-minify-css');
 var karma = require('gulp-karma');
 
 gulp.task('minify', function () {
-  gulp.src('js/csv.js')
+  gulp.src('js/*.js')
   .pipe(uglify())
   .pipe(gulp.dest('minified'));
 
