@@ -1,9 +1,15 @@
 var assert = chai.assert;
-var output = document.getElementById('OUTPUT');
-var input = document.getElementById("INP");
 
 	
 suite('Analizador Lexico de un subconjunto', function() {
+
+  setup(function(){
+    if (typeof __html__ !== 'undefined') {
+      document.body.innerHTML = __html__['tests/index.html'];
+      original = document.getElementById('original');
+      converted = document.getElementById('finaltable');
+    }
+  });
 
   
   test('Declaración de variable.', function() {
