@@ -3,10 +3,7 @@ node_js:
   - "0.10"
 before_script:
   - export DISPLAY=:99.0
-  - export CHROME_BIN=chromium-browser
   - sh -e /etc/init.d/xvfb start
-  - chmod +x ./node_modules/karma/bin/karma
-  - chmod +x ./node_modules/.bin/gulp
 branches:
   only:
     - gh-pages

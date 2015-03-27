@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Reescribir un Analizador Lexico para un subconjunto de JavaScript usando expresiones regulares.",
   "main": "app.js",
+  "directories": {
+    "test": "public/tests"
+  },
   "scripts": {
     "test": "gulp test"
   },
