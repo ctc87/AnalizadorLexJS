@@ -39,8 +39,24 @@ suite('Analizador Lexico de un subconjunto', function() {
     test('Probando if else.', function() {
     INPUT.value = 'if (0 <= 1) {\n  }\n  else {}';
     main();
-    assert.deepEqual(OUTPUT.innerHTML, '{\n    "value": "if",\n    "arity": "statement",\n    "first": {\n        "value": "<",\n        "arity": "binary",\n        "first": {\n            "value": 0,\n            "arity": "literal"\n        },\n        "second": {\n            "value": 1,\n            "arity": "literal"\n        }\n    },\n    "second": null,\n    "third": null\n}');
+    assert.deepEqual(OUTPUT.innerHTML, '{
+    "value": "if",
+    "arity": "statement",
+    "first": {
+        "value": "<=",
+        "arity": "binary",
+        "first": {
+            "value": 0,
+            "arity": "literal"
+        },
+        "second": {
+            "value": 1,
+            "arity": "literal"
+        }
+    },
+    "second": null,
+    "third": null
+}');
   });
   
 });
-
