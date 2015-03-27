@@ -5,7 +5,6 @@ var assert = chai.assert;
 suite('Analizador Lexico de un subconjunto', function() {
 
   setup(function(){
-      document.body.innerHTML = __html__['public/tests/index.html'];
       output = document.getElementById('OUTPUT');
       input = document.getElementById("INP");
   });
