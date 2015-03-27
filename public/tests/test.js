@@ -4,11 +4,11 @@ var assert = chai.assert;
 suite('Analizador Lexico de un subconjunto', function() {
 
   setup(function(){
-    if (typeof __html__ !== 'undefined') {
+    //if (typeof __html__ !== 'undefined') {
       document.body.innerHTML = __html__['tests/index.html'];
-      original = document.getElementById('original');
-      converted = document.getElementById('finaltable');
-    }
+      input = document.getElementById('IMP');
+      output = document.getElementById('OUTPUT');
+    //}
   });
 
   
