@@ -1,13 +1,10 @@
 var assert = chai.assert;
-
+var output = document.getElementById('OUTPUT');
+var input = document.getElementById("INP");
 
 	
 suite('Analizador Lexico de un subconjunto', function() {
 
-  setup(function(){
-      output = document.getElementById('OUTPUT');
-      input = document.getElementById("INP");
-  });
   
   test('Declaración de variable.', function() {
     input.value = 'var hola = "holaMundo";';
